@@ -1,0 +1,80 @@
+{
+  "expo": {
+    "name": "Yatra",
+    "slug": "yatra",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyCtZYQyls7YZZxzr7wnnv_L0C2nhqJa79c"
+      },
+      "bundleIdentifier": "com.yatra.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to show your position on the map."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCtZYQyls7YZZxzr7wnnv_L0C2nhqJa79c"
+        }
+      },
+      "package": "com.yatra.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "server",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://yatra.com/"
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#000000"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Yatra to use your location for finding rides and navigation."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": "https://yatra.com/"
+      },
+      "eas": {
+        "projectId": "04e732c3-6c98-4bd7-a175-5622916cd069"
+      }
+    }
+  }
+}
