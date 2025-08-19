@@ -11,7 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "config": {
-        "googleMapsApiKey": "AIzaSyCtZYQyls7YZZxzr7wnnv_L0C2nhqJa79c"
+        "googleMapsApiKey": "${process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY}"
       },
       "bundleIdentifier": "com.yatra.app",
       "infoPlist": {
@@ -25,7 +25,7 @@
       },
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCtZYQyls7YZZxzr7wnnv_L0C2nhqJa79c"
+          "apiKey": "${process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY}"
         }
       },
       "package": "com.yatra.app",

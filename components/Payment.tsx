@@ -129,6 +129,7 @@ const Payment = ({
       // Initialize the payment sheet with the payment intent
       const { error } = await initPaymentSheet({
         merchantDisplayName: "Yatra Rides",
+        paymentIntentClientSecret: paymentIntent.client_secret,
         customerId: customer,
         returnURL: "myapp://book-ride",
         allowsDelayedPaymentMethods: true,

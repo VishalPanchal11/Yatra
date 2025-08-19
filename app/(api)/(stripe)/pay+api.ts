@@ -42,8 +42,7 @@ export async function POST(request: Request) {
           result: result,
         }),
       );
-    } else if (result.status === 'requires_action' || result.status === 'requires_source_action') {
-      // Payment requires authentication
+    } else if (result.status === 'requires_action') {      // Payment requires authentication
       return new Response(
         JSON.stringify({
           requires_action: true,
@@ -64,7 +63,7 @@ export async function POST(request: Request) {
     }
   } catch (error) {
     console.error("Error paying:", error);
-    return new Response(JSON.stringify({ error: "Internal Server Error", details: error.message }), {
+    return new Response(JSON.stringify({ error: "Internal Server Error", details: error instanceof Error ? error.message : String(error) }), {
       status: 500,
     });
   }

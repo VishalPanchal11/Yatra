@@ -55,7 +55,6 @@ export async function GET(request: Request) {
     console.error("Error fetching recent rides:", error);
     return Response.json({ 
       error: "Internal Server Error", 
-      details: error.message || String(error)
-    }, { status: 500 });
+      details: error instanceof Error ? error.message : String(error)    }, { status: 500 });
   }
 }

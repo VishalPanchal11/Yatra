@@ -50,7 +50,6 @@ export async function POST(request: Request) {
     console.error("Error updating rides:", error);
     return Response.json({ 
       error: "Internal Server Error", 
-      details: error.message || String(error) 
-    }, { status: 500 });
+      details: error instanceof Error ? error.message : String(error)    }, { status: 500 });
   }
 } 

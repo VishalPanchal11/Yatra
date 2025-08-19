@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error("Error creating payment:", error);
-    return new Response(JSON.stringify({ error: "Payment creation failed", details: error.message }), {
+    return new Response(JSON.stringify({ error: "Payment creation failed", details: error instanceof Error ? error.message : String(error) }), {
       status: 500,
     });
   }
